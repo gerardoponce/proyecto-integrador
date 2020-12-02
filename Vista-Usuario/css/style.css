@@ -1,0 +1,153 @@
+/*Estilo*/
+/*
+Colores
+Black    #333333
+White    #ffffff
+Mostaza  #D6A300
+Cafe     #9A6339
+Gris     #999999
+*/
+/*------------- Custom --------------*/
+
+.color-mostaza{
+	color: #D6A300;
+}
+.btn-theme{
+	background-color: #9A6339;
+	padding: 10px 20px;
+	color: #ffffff
+}
+.btn-theme:hover{
+	color: #9A6339;
+	box-shadow: 0px 0px 4px#D6A300,0px 0px 7px#D6A300;
+	
+}
+.btn {
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+  }
+.btn-themeP {
+	border-color: #D6A300;
+	color: #D6A300;
+	bottom: 15px;
+}
+  
+  
+  .btn-themeP:hover {
+	background-color: #D6A300;
+	color: white;
+  }
+
+html,
+body{
+font-family: 'Poppins', sans-serif;
+}
+#main-home{
+	
+	width: 100%;
+	min-height: 650px;
+	background: url("../img/fondobanner.jpg");
+	background-size: 100% 100%;
+}
+#zona{
+	font-family: 'Poppins', sans-serif;
+}
+
+/*------------- HEADER--------------*/
+
+#main-home .navbar .nav-item{
+	padding: 0.15px;
+	
+}
+#main-home .navbar .nav-item .nav-link{
+	color: #333333;
+}
+#main-home .navbar .nav-item .nav-link:hover{
+	color: #D6A300;
+}
+
+/*------------- CARRUSEL--------------*/
+#main-home #banner-slider .owl-carousel .owl-nav button{
+	position: absolute;
+	top: 30%;
+	outline: none;
+}
+#main-home #banner-slider .owl-carousel .owl-nav button.owl-prev{
+	left:0;
+}
+#main-home #banner-slider .owl-carousel .owl-nav button.owl-next{
+	right:0;
+}
+#main-home #banner-slider .owl-carousel .owl-nav button span{
+	font-size: 56px;
+	padding: 0 1rem;
+	color:  #9A6339
+}
+#main-home #banner-slider .owl-carousel .owl-nav button.owl-prev span{
+	margin-left: -5rem;
+}
+#main-home #banner-slider .owl-carousel .owl-nav button.owl-next span{
+	margin-right: -5rem;
+}
+#main-home #banner-slider .owl-carousel .owl-dots{
+	position: absolute;
+	bottom: -3rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#main-home #banner-slider .owl-carousel .owl-dots button span{
+	background-color:  #9A6339;
+	padding: 6px !important;
+}
+#main-home #banner-slider .owl-carousel .owl-dots button.active span{
+	background-color:  #D6A300;
+}
+
+/*------------- MAPA--------------*/
+
+.contact-content{
+  	margin: 1rem;
+	padding: 1rem;
+	  
+	height: 400px;
+  	border: 2px solid #ccc;
+  	/* IMPORTANTE */
+	  text-align: center;
+}
+.contact-content iframe{
+width: 100%;
+height: 90%;
+}
+/*------------- FOOTER--------------*/
+#pie .header-top .item a{
+	color: #333333;
+}
+#pie .header-top .item a:hover{
+	color: #D6A300;
+}
+
+  /*RESPONSIVE STYLE*/
+
+  @media only screen and (max-width:580px){
+	#main-home .header-top{
+		flex-direction: column;
+	}
+	#main-home #banner-slider{
+		width: 95%;
+		margin: auto;
+	}
+	#main-home #banner-slider .owl-carousel .owl-nav button{
+		display: none;
+	}
+	#main-home #banner-slider .owl-carousel .owl-dots{
+	bottom: -2rem;
+	}
+  }
+
+  
+
+

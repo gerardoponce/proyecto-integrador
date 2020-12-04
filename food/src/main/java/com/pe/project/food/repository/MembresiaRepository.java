@@ -1,13 +1,13 @@
 package com.pe.project.food.repository;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.pe.project.food.model.Membresia;
 
+@Repository
 public interface MembresiaRepository extends JpaRepository<Membresia, Integer> {
 	
-	List<Membresia> findByNombre(String nombreMembresia);
+	Membresia findByNombre(String nombreMembresia);
 	
 }

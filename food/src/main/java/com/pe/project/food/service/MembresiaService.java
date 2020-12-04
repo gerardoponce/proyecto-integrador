@@ -6,9 +6,18 @@ import com.pe.project.food.model.Membresia;
 
 public interface MembresiaService {
 
-	Membresia crear(Membresia membresia);
-	List<Membresia> buscarTodas();
-	List<Membresia> findByNombre(String nombreMembresia);
-	Membresia actualizar(Membresia membresia);
-	void eliminar(String nombreMembresia);
+	Membresia crearMembresia(Membresia membresia);
+
+	List<Membresia> buscarTodasMembresias();
+
+	/**
+	 * 
+	 * @param String
+	 * @return unique pet
+	 */
+	Membresia buscarPorNombre(String nombreMembresia);
+
+	Membresia actualizarMembresia(Membresia membresia);
+
+	void eliminarMembresia(String nombreMembresia);
 }

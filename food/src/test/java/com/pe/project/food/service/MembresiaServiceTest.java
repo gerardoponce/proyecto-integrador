@@ -1,12 +1,12 @@
 package com.pe.project.food.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,12 +25,12 @@ public class MembresiaServiceTest {
 
 	@Test
 	public void testCrear() {
-		String nombre = "básico";
-		String descripcion ="es gratuito";
-		double precio = 0.00;
+		String nombre = "otro";
+		String descripcion ="te ofrece beneficios semanales";
+		double precio = 10.90;
 		
 		Membresia membresia = new Membresia(nombre, descripcion, precio);
-		membresia = membresiaService.crear(membresia);
+		membresia = membresiaService.crearMembresia(membresia);
 		
 		logger.info("" + membresia);
 		
@@ -38,12 +38,15 @@ public class MembresiaServiceTest {
 		assertEquals(nombre, membresia.getNombre());
 		assertEquals(descripcion, membresia.getDescripcion());
 		assertEquals(precio, membresia.getPrecio(), 0.1);
+		
+		// Eliminacion
+		membresiaService.eliminarMembresia(membresia.getNombre());
 	}
 	
 	@Test
 	public void testBuscarTodas() {
         int SIZE_EXPECTED = 3;
-        List<Membresia> membresias = membresiaService.buscarTodas();
+        List<Membresia> membresias = membresiaService.buscarTodasMembresias();
         
         assertEquals(SIZE_EXPECTED, membresias.size());
 	}
@@ -51,22 +54,22 @@ public class MembresiaServiceTest {
 	@Test
 	public void testFindByNombre() {
 
-		String FIND_NAME = "intermedio";
-		int SIZE_EXPECTED = 1;
+		String FIND_NAME = "básico";
+		String NOMBRE_ESPERADO="básico";
 
-		List<Membresia> membresia = membresiaService.findByNombre(FIND_NAME);
+		Membresia membresia = membresiaService.buscarPorNombre(FIND_NAME);
 
-		assertEquals(SIZE_EXPECTED, membresia.size());
+		assertEquals(NOMBRE_ESPERADO, membresia.getNombre());
 	}
 	
 	@Test
 	public void testActualizarMembresia() {
 
-		String nombre = "gratuito";
+		String nombre = "gratuito_v2";
 		String descripcion ="es gratuito";
 		double precio = 0.00;
 
-		String up_nombre = "premium";
+		String up_nombre = "premium_v2";
 		String up_descripcion ="es gratuito por dos meses";
 		double up_precio = 0.00;
 
@@ -74,7 +77,7 @@ public class MembresiaServiceTest {
 
 		// Crear membresia
 		logger.info(">" + membresia);
-		Membresia readMembresia = membresiaService.crear(membresia);
+		Membresia readMembresia = membresiaService.crearMembresia(membresia);
 		logger.info(">>" + readMembresia);
 
 		Integer create_id = readMembresia.getId();
@@ -85,7 +88,7 @@ public class MembresiaServiceTest {
 		readMembresia.setPrecio(up_precio);
 
 		// Actualizacion
-		Membresia upgradePet = membresiaService.actualizar(readMembresia);
+		Membresia upgradePet = membresiaService.actualizarMembresia(readMembresia);
 		logger.info(">>>>" + upgradePet);
 
 		assertThat(create_id).isNotNull();
@@ -93,31 +96,28 @@ public class MembresiaServiceTest {
 		assertEquals(up_nombre, upgradePet.getNombre());
 		assertEquals(up_descripcion, upgradePet.getDescripcion());
 		assertEquals(up_precio, upgradePet.getPrecio());
+		
+		// Eliminacion
+		membresiaService.eliminarMembresia(upgradePet.getNombre());
 	}
 	
 	@Test
 	public void testEliminarMembresia() {
 
-		String nombre = "gratuito_1";
+		String nombre = "básico_v1";
 		String descripcion ="es gratuito";
 		double precio = 0.00;
 
 		Membresia membresia = new Membresia(nombre, descripcion, precio);
-		membresia = membresiaService.crear(membresia);
+		membresia = membresiaService.crearMembresia(membresia);
 		logger.info("" + membresia);
 
-		try {
-			membresiaService.eliminar(membresia.getNombre());
-		} catch (Exception e) {
-			
-		}
-			
-		try {
-			membresiaService.findByNombre(membresia.getNombre()).get(0);
-			assertTrue(false);
-		} catch (Exception e) {
-			assertTrue(true);
-		} 				
+		membresiaService.eliminarMembresia(membresia.getNombre());
+		
+		Membresia readMembresia = membresiaService.buscarPorNombre(membresia.getNombre());
+		Assertions.assertThrows(NullPointerException.class, () -> {
+		    readMembresia.getId();
+		  });
 
 	}
 }

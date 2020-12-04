@@ -1,10 +1,13 @@
 package com.pe.project.food.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="membresias")
@@ -14,10 +17,16 @@ public class Membresia {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	@Column(unique=true, nullable = false)
+	@NotNull
 	private String nombre;
 
+	@Column(nullable = false)
+	@NotNull
 	private String descripcion;
 	
+	@Column(nullable = false)
+	@NotNull
 	private double precio;
 	
 	public Membresia() {

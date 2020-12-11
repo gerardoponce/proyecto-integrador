@@ -41,19 +41,28 @@ public class PlatilloRestController {
 	
 	@PostMapping(value="/platillos/")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Platillo crearPlatillo(@RequestBody Platillo platillo) {
+	public Platillo crearPlatillo(@RequestBody PlatilloDto platilloDto) {
+		
+		Platillo platillo = converter.dtoToEntity(platilloDto);
+		
 		return platilloService.crearPlatillo(platillo);
 	}
 	
 	@GetMapping(value="/platillos/{nombre}")
-	public Platillo buscarPlatillo(@PathVariable("nombre") String nombre) {
-		return platilloService.buscarPorNombre(nombre);
+	public PlatilloDto buscarPlatillo(@PathVariable("nombre") String nombre) {
+		
+		Platillo platillo = platilloService.buscarPorNombre(nombre);
+		
+		return converter.entityToDto(platillo);
 	}
 	
 	@PutMapping(value="/platillos/{nombre}")
 	@ResponseStatus(HttpStatus.OK)
-	public void actualizarMembresia(@PathVariable("nombre") String nombre, @RequestBody Platillo platillo) {
+	public void actualizarMembresia(@PathVariable("nombre") String nombre, @RequestBody PlatilloDto platilloDto) {
+		Platillo platillo = converter.dtoToEntity(platilloDto);
+		
 		platilloService.buscarPorNombre(platillo.getNombre());
+		
 		platilloService.actualizarPlatillo(platillo);
 	}
 	

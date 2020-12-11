@@ -1,7 +1,5 @@
 package com.pe.project.food.model;
 
-import com.pe.project.food.entity.TipoPlatillo;
-
 public class PlatilloDto {
 
 	private Integer id;
@@ -12,7 +10,7 @@ public class PlatilloDto {
 	
 	private double precio;
 
-	private TipoPlatillo tipoPlatillo;
+	private TipoPlatilloDto tipoPlatillo;
 
 	public Integer getId() {
 		return id;
@@ -46,11 +44,11 @@ public class PlatilloDto {
 		this.precio = precio;
 	}
 
-	public TipoPlatillo getTipoPlatillo() {
+	public TipoPlatilloDto getTipoPlatillo() {
 		return tipoPlatillo;
 	}
 
-	public void setTipoPlatillo(TipoPlatillo tipoPlatillo) {
+	public void setTipoPlatillo(TipoPlatilloDto tipoPlatillo) {
 		this.tipoPlatillo = tipoPlatillo;
 	}
 	

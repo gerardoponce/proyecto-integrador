@@ -8,25 +8,48 @@ import org.springframework.stereotype.Component;
 import com.pe.project.food.entity.Platillo;
 import com.pe.project.food.entity.TipoPlatillo;
 import com.pe.project.food.model.PlatilloDto;
+import com.pe.project.food.model.TipoPlatilloDto;
 
 @Component
 public class PlatilloConverter {
 
 	public PlatilloDto entityToDto(Platillo platillo) {
-		PlatilloDto dto = new PlatilloDto();
+		PlatilloDto platilloDto = new PlatilloDto();
 		
-		TipoPlatillo tipoPlatillo = new TipoPlatillo(platillo.getTipoPlatillo().getId(), platillo.getTipoPlatillo().getNombre());
+		TipoPlatilloDto tipoPlatilloDto = new TipoPlatilloDto();
 		
-		dto.setId(platillo.getId());
-		dto.setNombre(platillo.getNombre());
-		dto.setDescripcion(platillo.getDescripcion());
-		dto.setPrecio(platillo.getPrecio());
-		dto.setTipoPlatillo(tipoPlatillo);
+		tipoPlatilloDto.setId(platillo.getTipoPlatillo().getId());
+		tipoPlatilloDto.setNombre(platillo.getTipoPlatillo().getNombre()); 
 		
-		return dto;
+		platilloDto.setId(platillo.getId());
+		platilloDto.setNombre(platillo.getNombre());
+		platilloDto.setDescripcion(platillo.getDescripcion());
+		platilloDto.setPrecio(platillo.getPrecio());
+		platilloDto.setTipoPlatillo(tipoPlatilloDto);
+		
+		return platilloDto;
 	}
 	
 	public List<PlatilloDto> entityToDto(List<Platillo> platillos) {
 		return platillos.stream().map(x -> entityToDto(x)).collect(Collectors.toList());
+	}
+	
+	public Platillo dtoToEntity(PlatilloDto platilloDto) {
+		
+		Platillo platillo = new Platillo();
+		
+		TipoPlatillo tipoPlatillo = new TipoPlatillo();
+		
+		tipoPlatillo.setId(platilloDto.getTipoPlatillo().getId());
+		tipoPlatillo.setNombre(platilloDto.getTipoPlatillo().getNombre());
+		
+		platillo.setId(platilloDto.getId());
+		platillo.setNombre(platilloDto.getNombre());
+		platillo.setDescripcion(platilloDto.getDescripcion());
+		platillo.setPrecio(platilloDto.getPrecio());
+		platillo.setTipoPlatillo(tipoPlatillo);
+		
+		return platillo;
+		
 	}
 }

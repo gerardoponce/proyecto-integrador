@@ -1,4 +1,4 @@
-package com.pe.project.food.model;
+package com.pe.project.food.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

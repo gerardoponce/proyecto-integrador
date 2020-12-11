@@ -1,4 +1,4 @@
-package com.pe.project.food.model;
+package com.pe.project.food.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,8 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
-import com.sun.istack.NotNull;
+
 
 @Entity
 @Table(name="membresias")

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import com.pe.project.food.model.Membresia;
+import com.pe.project.food.entity.Membresia;
 import com.pe.project.food.repository.MembresiaRepository;
 import com.pe.project.food.service.MembresiaService;
 

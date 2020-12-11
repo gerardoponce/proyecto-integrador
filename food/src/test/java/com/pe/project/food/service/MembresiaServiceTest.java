@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.pe.project.food.model.Membresia;
+import com.pe.project.food.entity.Membresia;
 
 @SpringBootTest
 public class MembresiaServiceTest {
@@ -58,7 +58,6 @@ public class MembresiaServiceTest {
 		String NOMBRE_ESPERADO="básico";
 
 		Membresia membresia = membresiaService.buscarPorNombre(FIND_NAME);
-
 		assertEquals(NOMBRE_ESPERADO, membresia.getNombre());
 	}
 	

@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pe.project.food.model.Membresia;
+import com.pe.project.food.entity.Membresia;
 import com.pe.project.food.service.MembresiaService;
 
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT,RequestMethod.POST})
-public class MembresiaController {
+public class MembresiaRestController {
 
 	@Autowired
 	private MembresiaService membresiaService;

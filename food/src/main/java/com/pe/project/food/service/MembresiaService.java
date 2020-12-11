@@ -2,7 +2,7 @@ package com.pe.project.food.service;
 
 import java.util.List;
 
-import com.pe.project.food.model.Membresia;
+import com.pe.project.food.entity.Membresia;
 
 public interface MembresiaService {
 

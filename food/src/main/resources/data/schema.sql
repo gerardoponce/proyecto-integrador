@@ -1,5 +1,9 @@
 CREATE DATABASE food;
 
+CREATE USER IF NOT EXISTS 'dev'@'localhost' IDENTIFIED BY '#123456#';
+
+GRANT ALL PRIVILEGES ON food.* TO 'dev'@'localhost';
+
 use food;
 
 CREATE TABLE membresias (

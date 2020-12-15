@@ -5,8 +5,10 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+import com.pe.project.food.entity.Ingrediente;
 import com.pe.project.food.entity.Platillo;
 import com.pe.project.food.entity.TipoPlatillo;
+import com.pe.project.food.model.IngredienteDto;
 import com.pe.project.food.model.PlatilloDto;
 import com.pe.project.food.model.TipoPlatilloDto;
 
@@ -26,6 +28,12 @@ public class PlatilloConverter {
 		platilloDto.setDescripcion(platillo.getDescripcion());
 		platilloDto.setPrecio(platillo.getPrecio());
 		platilloDto.setTipoPlatillo(tipoPlatilloDto);
+		
+		IngredienteConverter ingredienteConverter = new IngredienteConverter();
+		
+		List<IngredienteDto> ingredientesDto = ingredienteConverter.entityToDto(platillo.getIngredientesPlatillos());
+		
+		platilloDto.setIngredientes(ingredientesDto);
 		
 		return platilloDto;
 	}
@@ -48,6 +56,12 @@ public class PlatilloConverter {
 		platillo.setDescripcion(platilloDto.getDescripcion());
 		platillo.setPrecio(platilloDto.getPrecio());
 		platillo.setTipoPlatillo(tipoPlatillo);
+		
+		IngredienteConverter ingredienteConverter = new IngredienteConverter();
+		
+		List<Ingrediente> ingredientes = ingredienteConverter.dtoToEntity(platilloDto.getIngredientes());
+		
+		platillo.setIngredientesPlatillos(ingredientes);
 		
 		return platillo;
 		

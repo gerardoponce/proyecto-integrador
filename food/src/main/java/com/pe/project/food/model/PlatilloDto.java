@@ -1,5 +1,7 @@
 package com.pe.project.food.model;
 
+import java.util.List;
+
 public class PlatilloDto {
 
 	private Integer id;
@@ -12,6 +14,8 @@ public class PlatilloDto {
 
 	private TipoPlatilloDto tipoPlatillo;
 
+	private List<IngredienteDto> ingredientes;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -50,6 +54,14 @@ public class PlatilloDto {
 
 	public void setTipoPlatillo(TipoPlatilloDto tipoPlatillo) {
 		this.tipoPlatillo = tipoPlatillo;
+	}
+
+	public List<IngredienteDto> getIngredientes() {
+		return ingredientes;
+	}
+
+	public void setIngredientes(List<IngredienteDto> ingredientes) {
+		this.ingredientes = ingredientes;
 	}
 	
 }

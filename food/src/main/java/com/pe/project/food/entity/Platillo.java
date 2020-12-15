@@ -1,11 +1,15 @@
 package com.pe.project.food.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -35,11 +39,19 @@ public class Platillo {
 	@JoinColumn(name = "tipo_platillo")
 	private TipoPlatillo tipoPlatillo;
 
+	@ManyToMany
+	@JoinTable(
+			  name = "platillos_ingredientes", 
+			  joinColumns = @JoinColumn(name = "platillo_id"), 
+			  inverseJoinColumns = @JoinColumn(name = "ingrediente_id"))
+	private List<Ingrediente> ingredientesPlatillos;
+	
 	public Platillo() {
 		super();
 	}
+	
 	public Platillo(Integer id, @NotNull String nombre, String descripcion, @NotNull double precio, String fotoPlatillo,
-			TipoPlatillo tipoPlatillo) {
+			TipoPlatillo tipoPlatillo, List<Ingrediente> ingredientesPlatillos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -47,6 +59,7 @@ public class Platillo {
 		this.precio = precio;
 		this.fotoPlatillo = fotoPlatillo;
 		this.tipoPlatillo = tipoPlatillo;
+		this.ingredientesPlatillos = ingredientesPlatillos;
 	}
 
 	public Platillo(@NotNull String nombre, String descripcion, @NotNull double precio, String fotoPlatillo) {
@@ -57,16 +70,21 @@ public class Platillo {
 		this.fotoPlatillo = fotoPlatillo;
 	}
 	
-	public Platillo(@NotNull String nombre, @NotNull double precio, TipoPlatillo tipoPlatillo) {
+	public Platillo(@NotNull String nombre, String descripcion, @NotNull double precio, String fotoPlatillo,
+			TipoPlatillo tipoPlatillo, List<Ingrediente> ingredientesPlatillos) {
 		super();
 		this.nombre = nombre;
+		this.descripcion = descripcion;
 		this.precio = precio;
+		this.fotoPlatillo = fotoPlatillo;
 		this.tipoPlatillo = tipoPlatillo;
+		this.ingredientesPlatillos = ingredientesPlatillos;
 	}
 	
 	public Integer getId() {
 		return id;
 	}
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -74,6 +92,7 @@ public class Platillo {
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -81,6 +100,7 @@ public class Platillo {
 	public String getDescripcion() {
 		return descripcion;
 	}
+	
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
@@ -88,6 +108,7 @@ public class Platillo {
 	public double getPrecio() {
 		return precio;
 	}
+	
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
@@ -95,6 +116,7 @@ public class Platillo {
 	public String getFotoPlatillo() {
 		return fotoPlatillo;
 	}
+	
 	public void setFotoPlatillo(String fotoPlatillo) {
 		this.fotoPlatillo = fotoPlatillo;
 	}
@@ -102,8 +124,17 @@ public class Platillo {
 	public TipoPlatillo getTipoPlatillo() {
 		return tipoPlatillo;
 	}
+	
 	public void setTipoPlatillo(TipoPlatillo tipoPlatillo) {
 		this.tipoPlatillo = tipoPlatillo;
+	}
+	
+	public List<Ingrediente> getIngredientesPlatillos() {
+		return ingredientesPlatillos;
+	}
+	
+	public void setIngredientesPlatillos(List<Ingrediente> ingredientesPlatillos) {
+		this.ingredientesPlatillos = ingredientesPlatillos;
 	}
 	
 }

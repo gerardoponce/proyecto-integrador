@@ -3,6 +3,7 @@ package com.pe.project.food.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
@@ -12,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.pe.project.food.entity.Ingrediente;
 import com.pe.project.food.entity.Platillo;
 import com.pe.project.food.entity.TipoPlatillo;
 
@@ -22,14 +24,25 @@ public class PlatilloServiceTest {
 	
 	@Autowired
 	private PlatilloService platilloService;
-	
+
 	@Test
 	public void testCrear() {
 		String nombre = "otro";
+		String descripcion = "una descripción breve";
 		double precio = 10.90;
+		String fotoPlatillo = "desconocido.jpg";
+		
 		TipoPlatillo tipos_platillos_id = new TipoPlatillo(1, "desayuno");
 		
-		Platillo platillo = new Platillo(nombre, precio, tipos_platillos_id);
+		List<Ingrediente> ingredientesPlatillos = new ArrayList<Ingrediente>();
+		
+		Ingrediente ingrediente1 = new Ingrediente(1, "ingrediente 1");
+		Ingrediente ingrediente2 = new Ingrediente(2, "ingrediente 2");
+		
+		ingredientesPlatillos.add(ingrediente1);
+		ingredientesPlatillos.add(ingrediente2);
+		
+		Platillo platillo = new Platillo(nombre, descripcion, precio, fotoPlatillo, tipos_platillos_id, ingredientesPlatillos);
 		platillo = platilloService.crearPlatillo(platillo);
 		
 		logger.info("" + platillo);
@@ -64,14 +77,23 @@ public class PlatilloServiceTest {
 	public void testActualizarPlatillo() {
 
 		String nombre = "otro_v2";
+		String descripcion = "una descripción breve";
 		double precio = 10.90;
-		TipoPlatillo tipos_platillos_id = new TipoPlatillo(3, "postre");
+		String fotoPlatillo = "desconocido.jpg";
 
+		TipoPlatillo tipos_platillos_id = new TipoPlatillo(3, "postre");
+		List<Ingrediente> ingredientesPlatillos = new ArrayList<Ingrediente>();
+		Ingrediente ingrediente1 = new Ingrediente(1, "ingrediente 1");
+		Ingrediente ingrediente2 = new Ingrediente(2, "ingrediente 2");
+		
+		ingredientesPlatillos.add(ingrediente1);
+		ingredientesPlatillos.add(ingrediente2);
+		
 		String up_nombre = "otor_v2.1";
 		String up_descripcion ="platillo de prueba";
 		double up_precio = 0.00;
 
-		Platillo platillo = new Platillo(nombre, precio, tipos_platillos_id);
+		Platillo platillo = new Platillo(nombre, descripcion, precio, fotoPlatillo, tipos_platillos_id, ingredientesPlatillos);
 
 		// Crear platillo
 		logger.info(">" + platillo);
@@ -103,10 +125,22 @@ public class PlatilloServiceTest {
 	public void testEliminarPlatillo() {
 
 		String nombre = "otro_v1";
+		String descripcion = "una descripción breve";
 		double precio = 10.90;
+		String fotoPlatillo = "desconocido.jpg";
+		
 		TipoPlatillo tipos_platillos_id = new TipoPlatillo(2, "almuerzo");
 
-		Platillo platillo = new Platillo(nombre, precio, tipos_platillos_id);
+		
+		List<Ingrediente> ingredientesPlatillos = new ArrayList<Ingrediente>();
+		Ingrediente ingrediente1 = new Ingrediente(1, "ingrediente 1");
+		Ingrediente ingrediente2 = new Ingrediente(2, "ingrediente 2");
+		
+		ingredientesPlatillos.add(ingrediente1);
+		ingredientesPlatillos.add(ingrediente2);
+		
+		Platillo platillo = new Platillo(nombre, descripcion, precio, fotoPlatillo, tipos_platillos_id, ingredientesPlatillos);
+		
 		platillo = platilloService.crearPlatillo(platillo);
 		logger.info("" + platillo);
 

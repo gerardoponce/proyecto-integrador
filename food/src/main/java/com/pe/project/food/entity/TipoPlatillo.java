@@ -43,6 +43,12 @@ public class TipoPlatillo {
 		this.nombre = nombre;
 	}
 	
+	public TipoPlatillo(@NotNull String nombre, Set<Platillo> platillos) {
+		super();
+		this.nombre = nombre;
+		this.platillos = platillos;
+	}
+
 	public Integer getId() {
 		return id;
 	}

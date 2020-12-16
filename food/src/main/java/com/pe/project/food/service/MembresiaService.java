@@ -13,7 +13,7 @@ public interface MembresiaService {
 	/**
 	 * 
 	 * @param String
-	 * @return unique pet
+	 * @return unique membresia
 	 */
 	Membresia buscarPorNombre(String nombreMembresia);
 

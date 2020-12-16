@@ -12,6 +12,8 @@ public class PlatilloDto {
 	
 	private double precio;
 
+	private String fotoPlatillo;
+	
 	private TipoPlatilloDto tipoPlatillo;
 
 	private List<IngredienteDto> ingredientes;
@@ -46,6 +48,14 @@ public class PlatilloDto {
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+
+	public String getFotoPlatillo() {
+		return fotoPlatillo;
+	}
+
+	public void setFotoPlatillo(String fotoPlatillo) {
+		this.fotoPlatillo = fotoPlatillo;
 	}
 
 	public TipoPlatilloDto getTipoPlatillo() {

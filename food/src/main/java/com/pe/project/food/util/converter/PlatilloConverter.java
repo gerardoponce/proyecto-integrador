@@ -3,37 +3,57 @@ package com.pe.project.food.util.converter;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import com.pe.project.food.entity.Ingrediente;
 import com.pe.project.food.entity.Platillo;
-import com.pe.project.food.entity.TipoPlatillo;
-import com.pe.project.food.model.IngredienteDto;
 import com.pe.project.food.model.PlatilloDto;
-import com.pe.project.food.model.TipoPlatilloDto;
 
 @Component
 public class PlatilloConverter {
 
+	ModelMapper modelMapper = null;
+	TipoPlatilloConverter tipoPlatilloConverter;
+	IngredienteConverter ingredienteConverter;
+
 	public PlatilloDto entityToDto(Platillo platillo) {
+		
 		PlatilloDto platilloDto = new PlatilloDto();
 		
-		TipoPlatilloDto tipoPlatilloDto = new TipoPlatilloDto();
+		/*
+		 * TipoPlatilloDto tipoPlatilloDto = new TipoPlatilloDto();
+		 * 
+		 * tipoPlatilloDto.setId(platillo.getTipoPlatillo().getId());
+		 * tipoPlatilloDto.setNombre(platillo.getTipoPlatillo().getNombre());
+		 * 
+		 * platilloDto.setId(platillo.getId());
+		 * platilloDto.setNombre(platillo.getNombre());
+		 * platilloDto.setDescripcion(platillo.getDescripcion());
+		 * platilloDto.setPrecio(platillo.getPrecio());
+		 * platilloDto.setTipoPlatillo(tipoPlatilloDto);
+		 * 
+		 * IngredienteConverter ingredienteConverter = new IngredienteConverter();
+		 * 
+		 * List<IngredienteDto> ingredientesDto =
+		 * ingredienteConverter.entityToDto(platillo.getIngredientesPlatillos());
+		 * 
+		 * platilloDto.setIngredientes(ingredientesDto);
+		 */
+		tipoPlatilloConverter = new TipoPlatilloConverter();
+		ingredienteConverter = new IngredienteConverter();
 		
-		tipoPlatilloDto.setId(platillo.getTipoPlatillo().getId());
-		tipoPlatilloDto.setNombre(platillo.getTipoPlatillo().getNombre()); 
+		modelMapper = new ModelMapper();
 		
-		platilloDto.setId(platillo.getId());
-		platilloDto.setNombre(platillo.getNombre());
-		platilloDto.setDescripcion(platillo.getDescripcion());
-		platilloDto.setPrecio(platillo.getPrecio());
-		platilloDto.setTipoPlatillo(tipoPlatilloDto);
-		
-		IngredienteConverter ingredienteConverter = new IngredienteConverter();
-		
-		List<IngredienteDto> ingredientesDto = ingredienteConverter.entityToDto(platillo.getIngredientesPlatillos());
-		
-		platilloDto.setIngredientes(ingredientesDto);
+	    modelMapper.createTypeMap(Platillo.class, PlatilloDto.class)
+	    	.addMappings(mapper -> {
+	    		mapper.skip(PlatilloDto::setTipoPlatillo);
+	    		mapper.skip(PlatilloDto::setIngredientes);
+	    	});
+	    
+	    platilloDto = modelMapper.map(platillo, PlatilloDto.class);
+	    
+	    platilloDto.setTipoPlatillo(tipoPlatilloConverter.entityToDto(platillo.getTipoPlatillo()));
+	    platilloDto.setIngredientes(ingredienteConverter.entityToDto(platillo.getIngredientesPlatillos()));
 		
 		return platilloDto;
 	}
@@ -46,22 +66,21 @@ public class PlatilloConverter {
 		
 		Platillo platillo = new Platillo();
 		
-		TipoPlatillo tipoPlatillo = new TipoPlatillo();
+		tipoPlatilloConverter = new TipoPlatilloConverter();
+		ingredienteConverter = new IngredienteConverter();
 		
-		tipoPlatillo.setId(platilloDto.getTipoPlatillo().getId());
-		tipoPlatillo.setNombre(platilloDto.getTipoPlatillo().getNombre());
+		modelMapper = new ModelMapper();
+
+		modelMapper.createTypeMap(PlatilloDto.class, Platillo.class)
+    	.addMappings(mapper -> {
+    		mapper.skip(Platillo::setTipoPlatillo);
+    		mapper.skip(Platillo::setIngredientesPlatillos);
+    	});
 		
-		platillo.setId(platilloDto.getId());
-		platillo.setNombre(platilloDto.getNombre());
-		platillo.setDescripcion(platilloDto.getDescripcion());
-		platillo.setPrecio(platilloDto.getPrecio());
-		platillo.setTipoPlatillo(tipoPlatillo);
+		platillo = modelMapper.map(platilloDto, Platillo.class);
 		
-		IngredienteConverter ingredienteConverter = new IngredienteConverter();
-		
-		List<Ingrediente> ingredientes = ingredienteConverter.dtoToEntity(platilloDto.getIngredientes());
-		
-		platillo.setIngredientesPlatillos(ingredientes);
+		platillo.setTipoPlatillo(tipoPlatilloConverter.dtoToEntity(platilloDto.getTipoPlatillo()));
+		platillo.setIngredientesPlatillos(ingredienteConverter.dtoToEntity(platilloDto.getIngredientes()));
 		
 		return platillo;
 		

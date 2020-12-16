@@ -39,7 +39,7 @@ public class MembresiaRestController {
 	}
 	
 	@GetMapping(value="/membresias/{nombre}")
-	public Membresia busctarMembresia(@PathVariable("nombre") String nombre) {
+	public Membresia buscarMembresia(@PathVariable("nombre") String nombre) {
 		return membresiaService.buscarPorNombre(nombre);
 	}
 	

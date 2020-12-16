@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.pe.project</groupId>
 	<artifactId>food</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.9.0</version>
 	<name>food</name>
 	<description>Aplicación web y Api REST sobre pedidos de comida delivery.</description>
 

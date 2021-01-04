@@ -6,7 +6,6 @@ Para ejecutar cada vista por separado:
       <activity android:name="AQUI VA CADA VISTA">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

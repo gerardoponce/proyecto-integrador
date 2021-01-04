@@ -5,7 +5,7 @@ Para ejecutar cada vista por separado:
 
  **activity android:name=".MainActivity"**
         
-2) Reemplazar "AQUI VA CADA VISTA" por cualquiera de los siguientes:
+2) Reemplazar ".MainActivity" por cualquiera de los siguientes:
    - **MainAdminDesayunos** , para CRUD de Desayunos
     - **MainAdminAlmuerzos** , para CRUD de Almuerzos
    - **MainAdminPostres** , para CRUD de Postres

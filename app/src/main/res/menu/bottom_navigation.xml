@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_desayuno"
+        android:icon="@drawable/ic_breakfast"
+        android:title="Desayunos"/>
+
+    <item
+        android:id="@+id/nav_almuerzo"
+        android:icon="@drawable/ic_lunch"
+        android:title="Almuerzos"/>
+
+    <item
+        android:id="@+id/nav_postres"
+        android:icon="@drawable/ic_dessert"
+        android:title="Postres"/>
+
+
+</menu>

@@ -4,6 +4,8 @@ CREATE USER IF NOT EXISTS 'dev'@'localhost' IDENTIFIED BY '#123Dev456#';
 
 GRANT ALL PRIVILEGES ON food.* TO 'dev'@'localhost';
 
+FLUSH PRIVILEGES;
+
 USE food;
 
 -- food.usuarios definition

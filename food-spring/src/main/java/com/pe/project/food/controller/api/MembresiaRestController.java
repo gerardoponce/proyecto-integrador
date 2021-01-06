@@ -34,8 +34,8 @@ public class MembresiaRestController {
 	
 	@PostMapping(value="/membresias/")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Membresia crearMembresia(@RequestBody Membresia membresia) {
-		return membresiaService.crearMembresia(membresia);
+	public void crearMembresia(@RequestBody Membresia membresia) {
+		membresiaService.crearMembresia(membresia);
 	}
 	
 	@GetMapping(value="/membresias/{nombre}")

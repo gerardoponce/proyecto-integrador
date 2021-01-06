@@ -3,7 +3,6 @@ package com.pe.project.food.service.jpa;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.pe.project.food.entity.Membresia;
@@ -11,7 +10,6 @@ import com.pe.project.food.repository.MembresiaRepository;
 import com.pe.project.food.service.MembresiaService;
 
 @Service
-@Primary
 public class MembresiaServiceJpa implements MembresiaService {
 
 	@Autowired

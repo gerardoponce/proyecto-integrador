@@ -1,8 +1,6 @@
 package com.pe.project.food.model;
 
-import java.util.Set;
-
-import com.pe.project.food.entity.Platillo;
+import java.util.List;
 
 public class TipoPlatilloDto {
 
@@ -10,8 +8,8 @@ public class TipoPlatilloDto {
 	
 	private String nombre;
 	
-	private Set<Platillo> platillos;
-
+	private List<PlatilloDto> platillos;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -28,11 +26,11 @@ public class TipoPlatilloDto {
 		this.nombre = nombre;
 	}
 
-	public Set<Platillo> getPlatillos() {
+	public List<PlatilloDto> getPlatillos() {
 		return platillos;
 	}
 
-	public void setPlatillos(Set<Platillo> platillos) {
+	public void setPlatillos(List<PlatilloDto> platillos) {
 		this.platillos = platillos;
 	}
 	

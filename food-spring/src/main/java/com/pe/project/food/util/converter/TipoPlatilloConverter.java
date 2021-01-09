@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
 import com.pe.project.food.entity.TipoPlatillo;
 import com.pe.project.food.model.TipoPlatilloDto;
 
+@Component
 public class TipoPlatilloConverter {
 
 	ModelMapper modelMapper = null;

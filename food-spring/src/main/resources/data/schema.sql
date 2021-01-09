@@ -1,4 +1,6 @@
-CREATE DATABASE food /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+DROP DATABASE IF EXISTS food;
+
+CREATE DATABASE IF NOT EXISTS food;
 
 CREATE USER IF NOT EXISTS 'dev'@'localhost' IDENTIFIED BY '#123Dev456#';
 
@@ -9,7 +11,7 @@ FLUSH PRIVILEGES;
 USE food;
 
 -- food.usuarios definition
-CREATE TABLE usuarios (
+/* CREATE TABLE usuarios (
 	id int NOT NULL AUTO_INCREMENT,
 	apellido varchar(255) DEFAULT NULL,
 	clave varchar(255) DEFAULT NULL,
@@ -18,17 +20,17 @@ CREATE TABLE usuarios (
 	foto_perfil varchar(255) DEFAULT NULL,
 	nombre varchar(255) DEFAULT NULL,
 	PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci; */
 
 -- food.membresias definition
-CREATE TABLE membresias (
+/* CREATE TABLE membresias (
 	id int NOT NULL AUTO_INCREMENT,
 	descripcion varchar(255) NOT NULL,
 	nombre varchar(255) NOT NULL,
 	precio double NOT NULL,
 	PRIMARY KEY (id),
 	UNIQUE KEY (nombre)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci; */
 
 -- food.ingredientes definition
 CREATE TABLE ingredientes (

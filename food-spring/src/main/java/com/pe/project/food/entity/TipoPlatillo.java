@@ -1,6 +1,6 @@
 package com.pe.project.food.entity;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,13 +24,13 @@ public class TipoPlatillo {
 	private String nombre;
 	
 	@OneToMany(mappedBy="tipoPlatillo")
-	private Set<Platillo> platillos;
+	private List<Platillo> platillos;
 
 	public TipoPlatillo() {
 		super();
 	}
 
-	public TipoPlatillo(Integer id, @NotNull String nombre, Set<Platillo> platillos) {
+	public TipoPlatillo(Integer id, @NotNull String nombre, List<Platillo> platillos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -43,7 +43,7 @@ public class TipoPlatillo {
 		this.nombre = nombre;
 	}
 	
-	public TipoPlatillo(@NotNull String nombre, Set<Platillo> platillos) {
+	public TipoPlatillo(@NotNull String nombre, List<Platillo> platillos) {
 		super();
 		this.nombre = nombre;
 		this.platillos = platillos;
@@ -65,11 +65,11 @@ public class TipoPlatillo {
 		this.nombre = nombre;
 	}
 
-	public Set<Platillo> getPlatillos() {
+	public List<Platillo> getPlatillos() {
 		return platillos;
 	}
 
-	public void setPlatillos(Set<Platillo> platillos) {
+	public void setPlatillos(List<Platillo> platillos) {
 		this.platillos = platillos;
 	}
 	

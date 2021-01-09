@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import com.pe.project.food.entity.Membresia;
 
@@ -66,11 +67,11 @@ public class MembresiaServiceTest {
 
 		String nombre = "gratuito_v2";
 		String descripcion ="es gratuito";
-		double precio = 0.00;
+		double precio = 0.08;
 
-		String up_nombre = "premium_v2";
+		String up_nombre = "gratuito_v2";
 		String up_descripcion ="es gratuito por dos meses";
-		double up_precio = 0.00;
+		double up_precio = 0.50;
 
 		Membresia membresia = new Membresia(nombre, descripcion, precio);
 
@@ -81,7 +82,7 @@ public class MembresiaServiceTest {
 
 		Integer create_id = readMembresia.getId();
 
-		// Prepar para actualizar
+		// Preparar para actualizar
 		readMembresia.setNombre(up_nombre);
 		readMembresia.setDescripcion(up_descripcion);
 		readMembresia.setPrecio(up_precio);
@@ -105,7 +106,7 @@ public class MembresiaServiceTest {
 
 		String nombre = "básico_v1";
 		String descripcion ="es gratuito";
-		double precio = 0.00;
+		double precio = 0.99;
 
 		Membresia membresia = new Membresia(nombre, descripcion, precio);
 		membresia = membresiaService.crearMembresia(membresia);
@@ -114,7 +115,7 @@ public class MembresiaServiceTest {
 		membresiaService.eliminarMembresia(membresia.getNombre());
 		
 		Membresia readMembresia = membresiaService.buscarPorNombre(membresia.getNombre());
-		Assertions.assertThrows(NullPointerException.class, () -> {
+		Assertions.assertThrows(WebClientResponseException.class, () -> {
 		    readMembresia.getId();
 		  });
 

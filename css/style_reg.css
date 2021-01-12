@@ -1,0 +1,274 @@
+
+/*Estilo*/
+/*
+Colores
+Black    #333333
+White    #ffffff
+Mostaza  #D6A300
+Cafe     #9A6339
+Gris     #999999
+*/
+/*------------- Custom --------------*/
+
+.color-mostaza{
+	color: #D6A300;
+}
+.btn-theme{
+	background-color: #9A6339;
+	padding: 10px 20px;
+	color: #ffffff
+}
+.btn-theme:hover{
+	color: #9A6339;
+	box-shadow: 0px 0px 4px#D6A300,0px 0px 7px#D6A300;
+	
+}
+.btn {
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+  }
+.btn-themeP {
+	border-color: #D6A300;
+	color: #D6A300;
+	bottom: 15px;
+}
+  
+  
+  .btn-themeP:hover {
+	background-color: #D6A300;
+	color: white;
+  }
+
+html,
+body{
+font-family: 'Poppins', sans-serif;
+}
+#main-home{
+	
+	width: 100%;
+	min-height: 650px;
+	
+	background-size: 100% 100%;
+}
+#zona{
+	font-family: 'Poppins', sans-serif;
+}
+
+/*------------- HEADER--------------*/
+
+#main-home .navbar .nav-item{
+	padding: 0.15px;
+	
+}
+#main-home .navbar .nav-item .nav-link{
+	color: #333333;
+}
+#main-home .navbar .nav-item .nav-link:hover{
+	color: #D6A300;
+}
+/*---------ESTILOS DEL LOGIN----- ------------MOTTA-------------------*/
+
+.contenedor_log{
+    background-image: url(https://fondosmil.com/fondo/35733.jpg);
+    background-position: center;
+    background-size: 10% 10% cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: auto;
+    height: auto;
+    margin: auto; 
+  }
+  .contenedor_log_l{
+    background-image: url(https://fondosmil.com/fondo/35733.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: auto;
+    height: auto;
+    margin:auto;  
+  }
+.header_log{
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0,.3)
+  }
+.header_log h1{
+    margin-left: 30px;
+    font-family: montez;
+    font-size: 30px;
+  }
+.header_log a{
+    margin-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    transition: all ease 300ms;
+  }
+.header_log a:hover{
+    color: rgb(180, 210, 212);
+  }
+.login_log{
+    margin-top: 130px;
+    margin-bottom: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+  }
+.fondo_log{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border-radius: 5px;
+    margin-top: 100px;
+  }
+.login_log{
+  margin-top: 202px;
+}
+.fondo_log img{
+    margin-top: -100px;
+    margin-bottom: 40px;
+    width: 30%;
+    border-radius: 50%;
+    border: solid #fff 5px;
+  }
+.fondo_log h3{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: -10px;
+  }
+.fondo_log form{
+    width: 70%;
+  }
+.fondo_log form span{
+    margin-right:0px;
+    background-color: rgba(255, 255, 255,.6);
+    color: #000;
+    border:solid 7px rgba(255, 255, 255,.01);
+    border-bottom: solid 9.5px rgba(255, 255, 255,.01);
+    border-top: solid 9px rgba(255, 255, 255,.01);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+.inp_log{
+    box-shadow: 0;
+    border: 0;
+    background-color: rgba(255, 255, 255, .1);
+    width: 90%;
+    margin-bottom: 15px;
+    height: 30px;
+    border: solid 2px rgba(255,255,255,.5);
+    font-size: 20px;
+    color: #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    transition: all 250ms ease;
+  }
+.fondo_log form .inp:focus{
+    outline:0px;
+    background-color: rgba(255, 255, 255, .6);
+    border: solid 2px rgba(255,255,255,.01);
+    color: #000;
+  }
+.boton_log{
+    width: 100%;
+    height: 30px;
+    font-size: 22px;
+    border: 0;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.0);
+    border-bottom: solid 1px #fff;
+    color: #fff;
+    margin-top: 50px;
+    transition: all 200ms ease;
+  }
+.boton_log:hover{
+    width: 120%;
+    margin-left: -10%;
+  }
+.boton_log:active{
+    background-color: rgba(255, 255, 255,0.2);
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+  }
+.boton_log:focus{
+    background-color: rgba(255, 255, 255,0.2);
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+  }
+.he_log{
+    text-decoration: none;
+    margin: auto;
+    color: #fff;
+    font-size: 18px;
+    transition: all 300ms ease;
+  }
+.he_log:hover{
+    color: rgb(184, 203, 214);
+  }
+.boton_log:hover{
+    border: 120%;
+  }
+
+
+
+  /*-------ESTILOS DE SIGN IN-------MOTTA------*/
+.label_sign{
+  color: #fff;
+  padding-top:-56px;
+}
+.sign_text{
+  color: #fff;
+}
+/*------------- FOOTER--------------*/
+#pie .header-top .item a{
+	color: #333333;
+}
+#pie .header-top .item a:hover{
+	color: #D6A300;
+}
+
+  /*RESPONSIVE STYLE*/
+
+  @media only screen and (max-width:580px){
+	#main-home .header-top{
+		flex-direction: column;
+	}
+	#main-home #banner-slider{
+		width: 95%;
+		margin: auto;
+	}
+	#main-home #banner-slider .owl-carousel .owl-nav button{
+		display: none;
+	}
+	#main-home #banner-slider .owl-carousel .owl-dots{
+	bottom: -2rem;
+	}
+  }
+
+

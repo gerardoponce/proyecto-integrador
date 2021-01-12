@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="css/estilo.css">
+    
+    <title>FOOD</title>
+</head>
+
+<body>
+    <header id="barra">
+		<div class="container">
+			<!-- Navbar -->
+			<nav class="navbar navbar-expand-lg navbar-light p-0">
+				<a class="navbar-brand" href="index.html">
+					<img src="img/logo.png" alt="" width="100px" class="logo" />
+                </a>
+
+                <div>
+                    <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="80px" width="80px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"   aria-expanded="false"></img>
+                        <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse" style="background: #f5ba8d; border-radius: 25px;">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                            <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block" style="background: #ce4b4b; border: none;">Vaciar Carrito</a>
+                            <a href="#" id="procesar-pedido" class="btn btn-danger btn-block" style="background: #7bce4b; border: none;">Procesar
+                                Compra</a>
+                        </div>
+                </div>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+				  <ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="menu.html">Menu</a>
+					</li>
+					<li class="nav-item dropdown" >
+					    <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Ingresar</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown-a">
+							<a class="dropdown-item" href="LogIn.html">Iniciar Sesion</a>
+							<a class="dropdown-item" href="SignIn.html">Registrarse</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						
+                    </li>
+				  </ul> 
+				</div>
+			</nav>
+		</div>
+	</header>   
+
+    
+
+    <main>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">Platos disponibles</h1>
+            <p class="lead">¡Pide lo que quieras! Te llegará lo más antes posible.</p>
+        </div>
+
+        <div class="container" id="lista-productos">
+            
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">   
+                        <h4 class="my-0 font-weight-bold">Tallarines con milanesa</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/hp1.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">8.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Tallarines con milanesa</li>
+                            <li>Refresco Incluido</li>
+                            <li>(20) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Estofado de Pollo</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/acer.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">7.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Estofado de Pollo</li>
+                            <li>Refresco Incluido</li>
+                            <li>(25) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Tallarines verdes con Bisteck</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/lenovo.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">7.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Tallarines verdes con Bisteck</li>
+                            <li>Refresco Incluido</li>
+                            <li>(13) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Arroz con Pollo</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/apple.jpeg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">8.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Arroz con pollo</li>
+                            <li>Refresco Incluido</li>
+                            <li>(10) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Lomo Saltado</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/huawei.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">8.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Lomo Saltado</li>
+                            <li>Refresco Incluido</li>
+                            <li>(15) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Causa Rellena</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/samsung.jpeg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">7.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Causa Rellena</li>
+                            <li>Refresco Incluido</li>
+                            <li>(40) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm" style="background:#f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Aji de Gallina</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/lg.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">8.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Aji de Gallina</li>
+                            <li>Refresco Incluido</li>
+                            <li>(30) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Aji de Gallina</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/advance.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">8.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Aji de Gallina</li>
+                            <li>Refresco Incluido</li>
+                            <li>(30) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm" style="background: #f5ba8d; border-radius: 25px;">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">Ceviche</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/dell.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">7.90</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Ceviche</li>
+                            <li>Refresco Incluido</li>
+                            <li>(25) platos disponibles</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9" style="background: #7bce4b; border: none;">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!--Footer -->
+	<section id="pie">
+        <footer class="footer">
+            <hr>
+            <div class="container">
+                <div class="header-top d-flex justify-content-between pt-2">
+                    <div class="d-flex justify-content-between">
+                        <div class="item px-2">
+                            <p>Siguenos:</p>
+                        </div>
+                        <div class="item px-2">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                        <div class="item px-2">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="item px-2">
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>	
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="item px-2">
+                            <p><i class="fas fa-phone-square"></i>+51939279572</p>
+                        </div>
+                        <div class="item px-2">
+                            <p> <i class="fas fa-map-marker-alt"></i>Peru,Lima</p>
+                        </div>
+                    </div>
+                </div>
+        <br>
+        <center>
+        <p class="copy">&copy; PROYECTO INTEGRADOR | 2020-2</p>
+        </center>
+        </div>
+        </footer>
+        </section>
+        
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>

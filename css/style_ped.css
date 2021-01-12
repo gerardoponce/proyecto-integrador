@@ -1,0 +1,168 @@
+/*Estilo*/
+/*
+Colores
+Black    #333333
+White    #ffffff
+Mostaza  #D6A300
+Cafe     #9A6339
+Gris     #999999
+*/
+/*------------- Custom --------------*/
+
+.color-mostaza{
+	color: #D6A300;
+}
+.btn-theme{
+	background-color: #9A6339;
+	padding: 10px 20px;
+	color: #ffffff
+}
+.btn-theme:hover{
+	color: #9A6339;
+	box-shadow: 0px 0px 4px#D6A300,0px 0px 7px#D6A300;
+	
+}
+.btn {
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+  }
+.btn-themeP {
+	border-color: #D6A300;
+	color: #D6A300;
+	bottom: 15px;
+}
+
+  .btn-themeP:hover {
+	background-color: #D6A300;
+	color: white;
+  }
+
+html,
+body{
+font-family: 'Poppins', sans-serif;
+}
+
+
+/*------------- HEADER--------------*/
+
+#main-home .navbar .nav-item{
+	padding: 0.15px;
+	
+}
+#main-home .navbar .nav-item .nav-link{
+	color: #333333;
+}
+#main-home .navbar .nav-item .nav-link:hover{
+	color: #D6A300;
+}
+
+/*------------- PRESENTACION--------------*/
+.page-breadcrumb {
+    padding: 250px 0 150px;
+    background: url("../img/fondopedido.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+}
+
+.all-page-title .container{
+	position: relative;
+	z-index: 2;
+}
+.all-page-title::before{
+	background: #9A6339;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	opacity: 0.8;	
+}
+.all-page-title h1{
+	font-size: 38px;
+	color: #ffffff;
+	font-family: 'Rubik', sans-serif;
+	padding: 0px;
+	font-weight: 500;
+}
+/*------------- PRESENTACION CONTACTO--------------*/
+.page-breadcrumbcont {
+    padding: 250px 0 150px;
+    background: url("../img/fondocontacto.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+}
+/*------------- HACER PEDIDO--------------*/
+
+.reservation-box{
+	padding: 70px 0px;
+}
+
+.reservation-box h3{
+	padding: 0px 15px;
+	margin-bottom: 20px;
+	font-weight: 600;
+}
+
+.help-block ul li{
+	color: red;
+}
+
+.form-control[readonly]{
+	background-color: #ffffff;
+}
+
+.form-control{
+	border-radius: 0px;
+	min-height: 50px;
+}
+.form-control:focus{
+	border: 1px solid #9A6339;
+	box-shadow: none;
+}
+
+.form-group .picker__input.picker__input--active{
+	border-color: #9A6339;
+}
+.submit-button{
+	margin-top: 20px;
+}
+
+/*------------- FOOTER--------------*/
+#pie .header-top .item a{
+	color: #333333;
+}
+#pie .header-top .item a:hover{
+	color: #D6A300;
+}
+
+  /*RESPONSIVE STYLE*/
+
+  @media only screen and (max-width:580px){
+	#main-home .header-top{
+		flex-direction: column;
+	}
+	#main-home #banner-slider{
+		width: 95%;
+		margin: auto;
+	}
+	#main-home #banner-slider .owl-carousel .owl-nav button{
+		display: none;
+	}
+	#main-home #banner-slider .owl-carousel .owl-dots{
+	bottom: -2rem;
+	}
+  }
+
+  
+
+

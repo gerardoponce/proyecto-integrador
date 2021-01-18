@@ -17,7 +17,9 @@ public interface MembresiaService {
 	 */
 	Membresia buscarPorNombre(String nombreMembresia);
 
+	Membresia buscarPorId(Integer idMembresia);
+	
 	Membresia actualizarMembresia(Membresia membresia);
 
-	void eliminarMembresia(String nombreMembresia);
+	Void eliminarMembresia(String nombreMembresia);
 }

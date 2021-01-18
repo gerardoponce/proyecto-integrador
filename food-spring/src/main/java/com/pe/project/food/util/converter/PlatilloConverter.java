@@ -20,25 +20,6 @@ public class PlatilloConverter {
 		
 		PlatilloDto platilloDto = new PlatilloDto();
 		
-		/*
-		 * TipoPlatilloDto tipoPlatilloDto = new TipoPlatilloDto();
-		 * 
-		 * tipoPlatilloDto.setId(platillo.getTipoPlatillo().getId());
-		 * tipoPlatilloDto.setNombre(platillo.getTipoPlatillo().getNombre());
-		 * 
-		 * platilloDto.setId(platillo.getId());
-		 * platilloDto.setNombre(platillo.getNombre());
-		 * platilloDto.setDescripcion(platillo.getDescripcion());
-		 * platilloDto.setPrecio(platillo.getPrecio());
-		 * platilloDto.setTipoPlatillo(tipoPlatilloDto);
-		 * 
-		 * IngredienteConverter ingredienteConverter = new IngredienteConverter();
-		 * 
-		 * List<IngredienteDto> ingredientesDto =
-		 * ingredienteConverter.entityToDto(platillo.getIngredientesPlatillos());
-		 * 
-		 * platilloDto.setIngredientes(ingredientesDto);
-		 */
 		tipoPlatilloConverter = new TipoPlatilloConverter();
 		ingredienteConverter = new IngredienteConverter();
 		

@@ -6,6 +6,7 @@ urlpatterns = [
     path('crear', views.crearMembresia, name="membresia-crear"),
     path('', views.listarMembresias, name="membresias-listar"),
     path('<str:nombre>', views.listarMembresia, name="membresia-listar"),
+    path('id/<int:id>', views.listarMembresiaPorId, name="membresia-listar-id"),
     path('<str:nombre>/actualizar', views.actualizarMembresia, name="membresia-actualizar"),
     path('<str:nombre>/eliminar', views.eliminarMembresia, name="membresia-eliminar")
 ]

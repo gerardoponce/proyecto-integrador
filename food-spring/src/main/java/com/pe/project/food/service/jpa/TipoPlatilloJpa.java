@@ -23,4 +23,9 @@ public class TipoPlatilloJpa implements TipoPlatilloService {
 		return tipoPlatilloRepo.findAll();
 	}
 
+	@Override
+	public TipoPlatillo buscarPorId(Integer idPlatillo) {
+		return tipoPlatilloRepo.findById(idPlatillo).get();
+	}
+
 }

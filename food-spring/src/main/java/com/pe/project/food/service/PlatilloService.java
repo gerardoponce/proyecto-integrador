@@ -17,6 +17,8 @@ public interface PlatilloService {
 	 */
 	Platillo buscarPorNombre(String nombrePlatillo);
 
+	Platillo buscarPorId(Integer idPlatillo);
+	
 	Platillo actualizarPlatillo(Platillo platillo);
 
 	void eliminarPlatillo(String nombrePlatillo);

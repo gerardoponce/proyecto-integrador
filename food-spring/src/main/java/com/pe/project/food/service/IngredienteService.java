@@ -17,6 +17,8 @@ public interface IngredienteService {
 	 */
 	Ingrediente buscarPorNombre(String nombreIngrediente);
 
+	Ingrediente buscarPorId(Integer idIngrediente);
+	
 	Ingrediente actualizarIngrediente(Ingrediente ingrediente);
 
 	void eliminarIngrediente (String nombreIngrediente);

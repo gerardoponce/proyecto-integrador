@@ -21,7 +21,7 @@ import com.pe.project.food.util.converter.IngredienteConverter;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.PUT,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.PUT,RequestMethod.POST,RequestMethod.DELETE})
 public class IngredienteRestController {
 
 	@Autowired

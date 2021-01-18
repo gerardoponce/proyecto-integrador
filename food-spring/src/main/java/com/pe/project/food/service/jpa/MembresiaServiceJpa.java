@@ -36,9 +36,15 @@ public class MembresiaServiceJpa implements MembresiaService {
 	}
 
 	@Override
-	public void eliminarMembresia(String nombreMembresia) {
+	public Void eliminarMembresia(String nombreMembresia) {
 		Membresia membresia = buscarPorNombre(nombreMembresia);
 		membresiaRepo.delete(membresia);
+		return null;
+	}
+
+	@Override
+	public Membresia buscarPorId(Integer idMembresia) {
+		return membresiaRepo.findById(idMembresia).get();
 	}
 	
 }

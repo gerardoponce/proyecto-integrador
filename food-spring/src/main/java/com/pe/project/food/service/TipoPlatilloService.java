@@ -7,4 +7,6 @@ import com.pe.project.food.entity.TipoPlatillo;
 public interface TipoPlatilloService {
 
 	List<TipoPlatillo> buscarTodosTiposPlatillo();
+	
+	TipoPlatillo buscarPorId(Integer idPlatillo);
 }

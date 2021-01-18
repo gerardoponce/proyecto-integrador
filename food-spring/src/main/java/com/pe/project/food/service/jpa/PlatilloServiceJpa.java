@@ -43,4 +43,9 @@ public class PlatilloServiceJpa implements PlatilloService {
 		platilloRepo.delete(platillo);
 	}
 
+	@Override
+	public Platillo buscarPorId(Integer idPlatillo) {
+		return platilloRepo.findById(idPlatillo).get();
+	}
+
 }

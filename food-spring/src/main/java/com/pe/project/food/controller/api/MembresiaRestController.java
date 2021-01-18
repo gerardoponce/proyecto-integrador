@@ -43,6 +43,11 @@ public class MembresiaRestController {
 		return membresiaService.buscarPorNombre(nombre);
 	}
 	
+	@GetMapping(value="/membresias/id/{id}")
+	public Membresia buscarMembresiaPorId(@PathVariable("id") Integer id) {
+		return membresiaService.buscarPorId(id);
+	}
+	
 	@PutMapping(value="/membresias/{nombre}")
 	@ResponseStatus(HttpStatus.OK)
 	public void actualizarMembresia(@PathVariable("nombre") String nombre, @RequestBody Membresia membresia) {

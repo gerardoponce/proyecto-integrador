@@ -43,4 +43,9 @@ public class IngredienteServiceJpa implements IngredienteService{
 		ingredienteRepo.delete(ingrediente);
 	}
 
+	@Override
+	public Ingrediente buscarPorId(Integer idIngrediente) {
+		return ingredienteRepo.findById(idIngrediente).get();
+	}
+
 }

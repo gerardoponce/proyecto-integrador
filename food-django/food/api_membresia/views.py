@@ -38,6 +38,12 @@ def listarMembresia(request, nombre):
     serializer = MembresiaSerializer(membresia, many = False)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def listarMembresiaPorId(request, id):
+    membresia = Membresia.objects.get(id=id)
+    serializer = MembresiaSerializer(membresia, many = False)
+    return Response(serializer.data)
+
 @api_view(['PUT'])
 def actualizarMembresia(request, nombre):
     membresia = Membresia.objects.get(nombre=nombre)

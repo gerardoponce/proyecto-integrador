@@ -81,7 +81,7 @@ public class MembresiaServiceRest implements MembresiaService{
 	}
 
 	@Override
-	public void eliminarMembresia(String nombreMembresia) {
+	public Void eliminarMembresia(String nombreMembresia) {
 		Mono<Void> membresiaMono = webClientBuilder
 										.build()
 										.delete().uri(MEMBRESIAS_URL+"{nombre}/eliminar", nombreMembresia)
@@ -90,6 +90,22 @@ public class MembresiaServiceRest implements MembresiaService{
 		
 		Void membresiaJson = membresiaMono.block();
 		
+		return membresiaJson;
+		
+	}
+
+	@Override
+	public Membresia buscarPorId(Integer idMembresia) {
+		
+		Mono<Membresia> membresiaMono = webClientBuilder
+											.build()
+											.get().uri(MEMBRESIAS_URL+"id/{id}", idMembresia)
+											.retrieve()
+											.bodyToMono(Membresia.class);
+		
+		Membresia membresia = membresiaMono.block();
+		
+		return membresia;
 	}
 
 }
